@@ -21,8 +21,8 @@ out/
 *.jks
 
 # Runtime Uploads & Generated Documents
-uploads/
-storage/
+/uploads/
+/storage/
 
 # Logging
 logs/
