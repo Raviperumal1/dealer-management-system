@@ -1,7 +1,11 @@
-# Stage 1: Build static bundle
+# Stage 1: Build static bundle with build arguments
 FROM node:20-alpine AS builder
 
 WORKDIR /app
+
+# Accept API URL build argument with a production-friendly default (/api/v1.0 for nginx reverse proxy)
+ARG VITE_API_BASE_URL=/api/v1.0
+ENV VITE_API_BASE_URL=${VITE_API_BASE_URL}
 
 COPY package*.json ./
 RUN npm ci
