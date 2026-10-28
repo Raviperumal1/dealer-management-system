@@ -1,0 +1,17 @@
+.git/
+.gitignore
+.dockerignore
+node_modules/
+backend/target/
+backend/uploads/
+backend/.env
+frontend/dist/
+frontend/node_modules/
+frontend/.env
+*.log
+.idea/
+.vscode/
+tests/
+reports/
+.DS_Store
+Thumbs.db
