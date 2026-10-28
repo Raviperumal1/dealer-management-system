@@ -1,0 +1,1131 @@
+/* Card Architecture - Clean, Compact, Subtle Elevation */
+.app-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xs);
+  transition: box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+.app-card:hover {
+  border-color: var(--border-color-dark);
+}
+
+.app-card-header {
+  padding: 0.85rem 1.15rem;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.app-card-title {
+  margin: 0;
+  font-size: 0.925rem;
+  font-weight: 600;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+}
+
+.app-card-body {
+  padding: 1.15rem;
+}
+
+.app-card-footer {
+  padding: 0.75rem 1.15rem;
+  border-top: 1px solid var(--border-color);
+  background-color: var(--bg-surface-muted);
+  border-bottom-left-radius: var(--radius-lg);
+  border-bottom-right-radius: var(--radius-lg);
+}
+
+/* KPI Metric Cards - Crisp, compact, informative */
+.kpi-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.1rem 1.25rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--shadow-xs);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.kpi-card:hover {
+  border-color: var(--border-color-dark);
+  box-shadow: var(--shadow-sm);
+}
+
+.kpi-card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.kpi-card-footer {
+  margin-top: 0.75rem;
+  padding-top: 0.65rem;
+  border-top: 1px solid var(--border-color-subtle, #f1f5f9);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 28px;
+}
+
+.kpi-icon-wrapper {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid transparent;
+}
+
+.kpi-icon-primary {
+  background-color: var(--color-primary-light);
+  color: var(--color-accent);
+  border-color: var(--color-primary-border);
+}
+
+.kpi-icon-success {
+  background-color: var(--color-success-light);
+  color: var(--color-success);
+  border-color: var(--color-success-border);
+}
+
+.kpi-icon-warning {
+  background-color: var(--color-warning-light);
+  color: var(--color-warning);
+  border-color: var(--color-warning-border);
+}
+
+.kpi-icon-danger {
+  background-color: var(--color-danger-light);
+  color: var(--color-danger);
+  border-color: var(--color-danger-border);
+}
+
+.kpi-icon-info {
+  background-color: var(--color-info-light);
+  color: var(--color-info);
+  border-color: var(--color-info-border);
+}
+
+.kpi-value {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.15;
+  margin-top: 0.2rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+.kpi-label {
+  font-size: 0.725rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+/* Status & Ownership Badges - Modern micro-pill style */
+.badge-own {
+  background-color: #eff6ff;
+  color: #1e40af;
+  border: 1px solid #bfdbfe;
+  font-weight: 600;
+  padding: 0.18rem 0.55rem;
+  border-radius: var(--radius-full);
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+}
+
+.badge-broker {
+  background-color: #fefce8;
+  color: #854d0e;
+  border: 1px solid #fef08a;
+  font-weight: 600;
+  padding: 0.18rem 0.55rem;
+  border-radius: var(--radius-full);
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+}
+
+.badge-status {
+  padding: 0.18rem 0.55rem;
+  border-radius: var(--radius-full);
+  font-weight: 500;
+  font-size: 0.72rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  white-space: nowrap;
+}
+
+.badge-status-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.badge-status-success {
+  background-color: var(--color-success-light);
+  color: var(--color-success);
+  border: 1px solid var(--color-success-border);
+}
+.badge-status-success .badge-status-dot { background-color: var(--color-success); }
+
+.badge-status-warning {
+  background-color: var(--color-warning-light);
+  color: var(--color-warning);
+  border: 1px solid var(--color-warning-border);
+}
+.badge-status-warning .badge-status-dot { background-color: var(--color-warning); }
+
+.badge-status-danger {
+  background-color: var(--color-danger-light);
+  color: var(--color-danger);
+  border: 1px solid var(--color-danger-border);
+}
+.badge-status-danger .badge-status-dot { background-color: var(--color-danger); }
+
+.badge-status-info {
+  background-color: var(--color-info-light);
+  color: var(--color-info);
+  border: 1px solid var(--color-info-border);
+}
+.badge-status-info .badge-status-dot { background-color: var(--color-info); }
+
+.badge-status-neutral {
+  background-color: #f1f5f9;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+}
+.badge-status-neutral .badge-status-dot { background-color: #64748b; }
+
+/* Enhanced Enterprise Data Tables */
+.table-container {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-xs);
+  width: 100%;
+  max-width: 100%;
+}
+
+.app-table {
+  width: 100%;
+  margin-bottom: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.app-table.table-fixed {
+  table-layout: fixed;
+  width: 100%;
+}
+
+.app-table th {
+  background-color: #f8fafc;
+  color: #475569;
+  font-weight: 600;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.55rem 0.75rem;
+  border-bottom: 1px solid var(--border-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.app-table td {
+  padding: 0.55rem 0.75rem;
+  vertical-align: middle;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.815rem;
+  color: var(--text-main);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.app-table tbody tr {
+  transition: background-color var(--transition-fast);
+}
+
+.app-table tbody tr:hover td {
+  background-color: #f8fafc;
+}
+
+.app-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Buttons and Form Controls */
+.btn {
+  font-size: 0.825rem;
+  font-weight: 500;
+  border-radius: var(--radius-md);
+  padding: 0.4rem 0.85rem;
+  transition: all var(--transition-fast);
+}
+
+.btn-sm {
+  font-size: 0.775rem;
+  padding: 0.28rem 0.65rem;
+}
+
+.btn-primary {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #ffffff;
+  box-shadow: none;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background-color: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+  color: #ffffff;
+}
+
+.btn-outline-secondary {
+  border-color: var(--border-color);
+  color: var(--text-main);
+  background-color: #ffffff;
+}
+
+.btn-outline-secondary:hover {
+  background-color: var(--bg-surface-muted);
+  border-color: var(--border-color-dark);
+  color: var(--text-main);
+}
+
+.form-control, .form-select {
+  border-color: var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 0.42rem 0.75rem;
+  font-size: 0.825rem;
+  color: var(--text-main);
+  background-color: #ffffff;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.form-label {
+  font-weight: 500;
+  font-size: 0.775rem;
+  color: var(--text-main);
+  margin-bottom: 0.25rem;
+}
+
+/* Skeletons - Flat tone step pulse */
+.skeleton {
+  background-color: #f1f5f9;
+  animation: pulse-flat 1.5s ease-in-out infinite;
+  border-radius: var(--radius-sm);
+}
+
+@keyframes pulse-flat {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+
+/* Money display formatting */
+.money-inr {
+  font-family: var(--font-sans);
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+/* Segmented Control Tabs (DEALEROS style) */
+.segmented-control {
+  display: inline-flex;
+  align-items: center;
+  background-color: #f1f5f9;
+  padding: 0.25rem;
+  border-radius: var(--radius-md);
+  gap: 0.25rem;
+  border: 1px solid var(--border-color);
+}
+
+.segmented-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.825rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  border: none;
+  background: transparent;
+  border-radius: calc(var(--radius-md) - 2px);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.segmented-tab:hover {
+  color: var(--text-main);
+}
+
+.segmented-tab.active {
+  background-color: #ffffff;
+  color: var(--color-primary);
+  font-weight: 600;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.segmented-badge {
+  font-size: 0.72rem;
+  padding: 0.1rem 0.45rem;
+  border-radius: var(--radius-full);
+  background-color: #e2e8f0;
+  color: #475569;
+  font-weight: 600;
+}
+
+.segmented-tab.active .segmented-badge {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+/* Inspection Checklist UI (DEALEROS style) */
+.inspection-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.inspection-group-header {
+  background-color: #f8fafc;
+  padding: 0.75rem 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+  font-weight: 700;
+  font-size: 0.825rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.checkpoint-row {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #f1f5f9;
+  transition: background-color var(--transition-fast);
+}
+
+.checkpoint-row:hover {
+  background-color: #f8fafc;
+}
+
+.checkpoint-row:last-child {
+  border-bottom: none;
+}
+
+.condition-btn-group {
+  display: inline-flex;
+  gap: 0.35rem;
+}
+
+.condition-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  background-color: #ffffff;
+  color: #64748b;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.condition-btn:hover {
+  border-color: #cbd5e1;
+  background-color: #f8fafc;
+}
+
+.condition-btn.active-good {
+  background-color: var(--color-success-light);
+  border-color: var(--color-success-border);
+  color: var(--color-success);
+}
+
+.condition-btn.active-warning {
+  background-color: var(--color-warning-light);
+  border-color: var(--color-warning-border);
+  color: var(--color-warning);
+}
+
+.condition-btn.active-danger {
+  background-color: var(--color-danger-light);
+  border-color: var(--color-danger-border);
+  color: var(--color-danger);
+}
+
+.condition-btn.active-na {
+  background-color: #f1f5f9;
+  border-color: #e2e8f0;
+  color: #64748b;
+}
+
+/* Micro-interaction & Hover utilities */
+.hover-shadow {
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.hover-shadow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  border-color: #cbd5e1 !important;
+}
+
+.transition-all {
+  transition: all 0.2s ease-in-out;
+}
+
+.shadow-xs {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Vehicle Showroom Cards (DEALEROS Modern Grid) */
+.vehicle-grid-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.vehicle-grid-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+  border-color: #cbd5e1;
+}
+
+.vehicle-card-media {
+  position: relative;
+  width: 100%;
+  height: 155px;
+  background-color: #f8fafc;
+  overflow: hidden;
+}
+
+.vehicle-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.25s ease;
+}
+
+.vehicle-grid-card:hover .vehicle-card-img {
+  transform: scale(1.03);
+}
+
+.vehicle-card-badge-left {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 2;
+}
+
+.vehicle-card-badge-right {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 2;
+}
+
+.vehicle-card-type-tag {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  z-index: 2;
+  background-color: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(4px);
+  color: #ffffff;
+  font-size: 0.7rem;
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.vehicle-spec-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.74rem;
+  color: #475569;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 2.5px 7px;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.license-plate-badge {
+  display: inline-flex;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1.5px solid #1e293b;
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  font-size: 0.75rem;
+  color: #0f172a;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+  white-space: nowrap;
+}
+
+.license-plate-badge .ind-tag {
+  color: #2563eb;
+  font-size: 0.6rem;
+  margin-right: 4px;
+  font-weight: 800;
+  border-right: 1px solid #cbd5e1;
+  padding-right: 3px;
+}
+
+/* ==========================================================================
+   AUTHENTIC PHYSICAL FOLDER-TAB SYSTEM (Exact Reference Match)
+   - Inactive tabs: Soft cool grey (#b4bec9) with dark legible text (#334155)
+   - Active tab: Pure white (#ffffff) with bold text (#0f172a)
+   - Smooth curved flare / fillet shoulders connecting tab bottom to panel
+   - Border radius on top: 14px 14px 0 0
+   - Flawless single-surface fusion with the white card below
+   ========================================================================== */
+
+.folder-tabs-header {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 0;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  z-index: 3;
+  scrollbar-width: none;
+}
+.folder-tabs-header::-webkit-scrollbar {
+  display: none;
+}
+
+.folder-tab-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.75rem 1.6rem 0.75rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #475569;
+  background-color: #b8c4ce; /* Authentic reference inactive grey */
+  border: none;
+  border-radius: 14px 14px 0 0;
+  cursor: pointer;
+  transition: background-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
+  outline: none;
+  white-space: nowrap;
+  user-select: none;
+  box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.04);
+}
+
+/* Inactive Tab Hover */
+.folder-tab-btn:not(.active):hover {
+  background-color: #a8b6c2;
+  color: #0f172a;
+}
+
+/* Active Folder Tab — Seamlessly fused into white panel */
+.folder-tab-btn.active {
+  background-color: #ffffff;
+  color: #0f172a;
+  font-weight: 600;
+  z-index: 10;
+  padding-top: 0.82rem;
+  padding-bottom: 0.82rem;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.03);
+}
+
+/* Authentic Inward Fillet / Shoulder Curves (Left & Right) */
+.folder-tab-btn.active::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -12px;
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle at 0 0, transparent 12px, #ffffff 12.5px);
+  pointer-events: none;
+}
+
+.folder-tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: -12px;
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle at 100% 0, transparent 12px, #ffffff 12.5px);
+  pointer-events: none;
+}
+
+/* Count & Status Badges inside Folder Tabs */
+.folder-tab-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.12rem 0.45rem;
+  border-radius: 9999px;
+  line-height: 1.2;
+}
+
+.folder-tab-btn.active .folder-tab-badge {
+  background-color: #0f172a;
+  color: #ffffff;
+}
+
+.folder-tab-btn:not(.active) .folder-tab-badge {
+  background-color: rgba(255, 255, 255, 0.6);
+  color: #1e293b;
+}
+
+/* Connected Folder Body Sheet */
+.folder-tab-panel {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0 16px 16px 16px;
+  padding: 1.75rem;
+  box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.04);
+  position: relative;
+  z-index: 2;
+  margin-top: 0;
+}
+
+
+
+.filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  background-color: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #1e40af;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.filter-chip button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: #3b82f6;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.filter-chip button:hover {
+  color: #1d4ed8;
+}
+
+.table-actions-cell {
+  white-space: nowrap;
+  text-align: right;
+  padding-right: 0.65rem !important;
+}
+
+.table-action-btn-group {
+  display: inline-flex;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  height: 28px;
+}
+
+.table-action-btn-group .btn {
+  padding: 0.22rem 0.42rem;
+  border-radius: 0;
+  border: none;
+  border-left: 1px solid var(--border-color);
+  background-color: transparent;
+  color: #64748b;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  line-height: 1;
+  height: 100%;
+}
+
+.table-action-btn-group .btn:first-child {
+  border-left: none;
+}
+
+.table-action-btn-group .btn:hover {
+  background-color: #f1f5f9;
+  color: var(--color-primary);
+}
+
+.table-action-btn-group .btn-action-inspect:hover {
+  color: #b45309;
+}
+
+.table-action-btn-group .btn-action-cost:hover {
+  color: #0369a1;
+}
+
+.table-action-btn-group .btn-action-edit:hover {
+  color: var(--color-primary);
+}
+
+/* ==========================================================================
+   Phase 2: Professional Vehicle Image Viewer Modal
+   ========================================================================== */
+.vehicle-image-viewer__overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1080;
+  background-color: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.vehicle-image-viewer__dialog {
+  width: 100%;
+  max-width: 960px;
+  background-color: #ffffff;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: viewerFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes viewerFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.vehicle-image-viewer__header {
+  padding: 0.85rem 1.25rem;
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.vehicle-image-viewer__viewport {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  height: min(75vh, 760px);
+  padding: 16px;
+  overflow: hidden;
+  background: #f1f5f9;
+  position: relative;
+}
+
+.vehicle-image-viewer__image {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 6px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease-in-out;
+}
+
+.vehicle-image-viewer__footer {
+  padding: 0.75rem 1.25rem;
+  background-color: #ffffff;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.825rem;
+  color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   Phase 4 & 5: Responsive Inventory Grid & Unified Search/Filter Toolbar
+   ========================================================================== */
+.vehicle-toolbar-container {
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1.15rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.vehicle-toolbar-row-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 0.75rem;
+}
+
+.vehicle-toolbar {
+  display: grid;
+  grid-template-columns: minmax(240px, 2fr) repeat(4, minmax(130px, 1fr)) auto;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+  min-width: 0;
+}
+
+.vehicle-toolbar__search {
+  position: relative;
+  min-width: 0;
+}
+
+/* Advanced Enterprise Search Bar Component */
+.advanced-search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 0 0.5rem;
+  transition: all var(--transition-fast);
+  position: relative;
+  min-width: 0;
+  width: 100%;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  height: 34px;
+}
+
+.advanced-search-bar:focus-within {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.advanced-search-bar__scope {
+  border: none;
+  background: transparent;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #475569;
+  padding: 0.2rem 0.35rem;
+  cursor: pointer;
+  outline: none;
+  border-right: 1px solid var(--border-color);
+  margin-right: 0.35rem;
+  max-width: 110px;
+  line-height: 1;
+}
+
+.advanced-search-bar__scope:focus {
+  color: var(--color-primary);
+}
+
+.advanced-search-bar__icon {
+  color: #94a3b8;
+  margin-right: 0.35rem;
+  flex-shrink: 0;
+}
+
+.advanced-search-bar__input {
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  padding: 0.2rem 0.25rem !important;
+  font-size: 0.825rem !important;
+  color: var(--text-main) !important;
+  flex: 1;
+  min-width: 0;
+  outline: none !important;
+  height: 100%;
+}
+
+.advanced-search-bar__input::placeholder {
+  color: #94a3b8;
+  font-size: 0.8rem;
+}
+
+.advanced-search-bar__kbd {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  background-color: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 0.68rem;
+  color: #64748b;
+  font-weight: 600;
+  pointer-events: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.advanced-search-bar__clear {
+  background: none;
+  border: none;
+  padding: 2px 5px;
+  color: #94a3b8;
+  cursor: pointer;
+  border-radius: 3px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+}
+
+.advanced-search-bar__clear:hover {
+  color: #ef4444;
+  background-color: #fee2e2;
+}
+
+.search-suggestion-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.72rem;
+  background-color: #f8fafc;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.search-suggestion-pill:hover {
+  background-color: #eff6ff;
+  color: var(--color-primary);
+  border-color: #bfdbfe;
+}
+
+.search-results-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: var(--color-primary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+}
+
+.vehicle-toolbar select {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1050px) {
+  .vehicle-toolbar {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .vehicle-toolbar__search {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 575px) {
+  .vehicle-toolbar {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .vehicle-toolbar__search {
+    grid-column: auto;
+  }
+}
+
+.vehicle-inventory-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+@media (max-width: 1400px) {
+  .vehicle-inventory-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 992px) {
+  .vehicle-inventory-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 576px) {
+  .vehicle-inventory-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+

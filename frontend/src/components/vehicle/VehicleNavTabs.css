@@ -1,0 +1,139 @@
+/* ==========================================================================
+   VehicleNavTabs - Modern Capsule Pill Horizontal Navigation
+   - Matches referenced aesthetic: Pill capsule with pure white active pill,
+     clean typography, smooth transitions, and vibrant notification badge.
+   - Fully responsive on mobile, tablets, and wide screens.
+   ========================================================================== */
+
+.vehicle-tabs-wrapper {
+  margin-bottom: 1.25rem;
+  width: 100%;
+}
+
+.vehicle-pill-container {
+  display: inline-flex;
+  align-items: center;
+  background-color: #f1f3f7;
+  padding: 5px 6px;
+  border-radius: 9999px;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.04);
+  gap: 4px;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  position: relative;
+}
+
+.vehicle-pill-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+/* Base Tab Pill */
+.vehicle-pill-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 8px 18px;
+  border-radius: 9999px;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 500;
+  line-height: 1.2;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+  user-select: none;
+  text-decoration: none;
+  position: relative;
+}
+
+/* Inactive Tab Hover */
+.vehicle-pill-tab:not(.active):hover {
+  color: #1e293b;
+  background-color: rgba(255, 255, 255, 0.55);
+}
+
+.vehicle-pill-tab:focus-visible {
+  box-shadow: 0 0 0 2px var(--color-accent, #2563eb);
+}
+
+/* Active Pill Tab - Elevated White Capsule */
+.vehicle-pill-tab.active {
+  background-color: #ffffff;
+  color: #0f172a;
+  font-weight: 700;
+  box-shadow: 0 2px 8px -1px rgba(15, 23, 42, 0.08), 0 1px 3px rgba(15, 23, 42, 0.05);
+}
+
+.vehicle-pill-label {
+  display: inline-block;
+  letter-spacing: -0.01em;
+}
+
+/* Badges within Tabs */
+.vehicle-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+/* Red Accent Notification Badge (Matches Reference image red dot) */
+.vehicle-pill-badge.badge-accent {
+  background-color: #e11d48;
+  color: #ffffff;
+  box-shadow: 0 1px 3px rgba(225, 29, 72, 0.35);
+}
+
+/* Neutral subtle counter badge */
+.vehicle-pill-badge.badge-neutral {
+  background-color: #e2e8f0;
+  color: #475569;
+}
+
+.vehicle-pill-tab.active .vehicle-pill-badge.badge-neutral {
+  background-color: #f1f5f9;
+  color: #1e293b;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+  .vehicle-tabs-wrapper {
+    margin-bottom: 1rem;
+  }
+
+  .vehicle-pill-container {
+    width: 100%;
+    padding: 4px;
+    border-radius: 14px;
+    gap: 3px;
+  }
+
+  .vehicle-pill-tab {
+    padding: 7px 13px;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+  }
+
+  .vehicle-pill-badge {
+    min-width: 18px;
+    height: 18px;
+    font-size: 0.68rem;
+    padding: 0 4px;
+  }
+}

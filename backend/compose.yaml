@@ -1,0 +1,46 @@
+services:
+  mysql:
+    image: mysql:8.0.36
+    container_name: dealership-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-root_password}
+      MYSQL_DATABASE: ${DB_NAME:-dealership_db}
+      MYSQL_USER: ${DB_USERNAME:-dealership_user}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-dealership_pass}
+    ports:
+      - "${DB_PORT:-3306}:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dealership-backend
+    restart: always
+    depends_on:
+      mysql:
+        condition: service_healthy
+    ports:
+      - "${SERVER_PORT:-8081}:8081"
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_NAME: ${DB_NAME:-dealership_db}
+      DB_USERNAME: ${DB_USERNAME:-dealership_user}
+      DB_PASSWORD: ${DB_PASSWORD:-dealership_pass}
+      JWT_SECRET: ${JWT_SECRET:-404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970}
+      STORAGE_UPLOAD_DIR: /app/uploads
+    volumes:
+      - backend_uploads:/app/uploads
+
+volumes:
+  mysql_data:
+  backend_uploads:

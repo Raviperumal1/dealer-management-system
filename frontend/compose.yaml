@@ -1,0 +1,18 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dealership-frontend
+    ports:
+      - "80:80"
+    environment:
+      - VITE_API_BASE_URL=http://backend:8081/api/v1.0
+    restart: unless-stopped
+    networks:
+      - dealership-network
+
+networks:
+  dealership-network:
+    name: dealership-network
+    driver: bridge

@@ -1,0 +1,368 @@
+/* ==========================================================================
+   Vehicle Inventory Master Header & Control Strip
+   - Tasteful Modern Enterprise SaaS layout
+   - Polished header bar with contextual metrics and view toggles
+   - Unified glass-morphism search & interactive filter ribbon
+   - Popular tags, results indicators & active filter chips
+   ========================================================================== */
+
+.vehicle-page-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+/* 1. Executive Top Master Header Card */
+.vehicle-master-header {
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 16px;
+  padding: 1.25rem 1.6rem;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04), 0 4px 12px -2px rgba(15, 23, 42, 0.02);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.vehicle-master-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.vehicle-master-breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: #64748b;
+  margin-bottom: 2px;
+}
+
+.vehicle-master-breadcrumbs a {
+  color: #64748b;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.vehicle-master-breadcrumbs a:hover {
+  color: #2563eb;
+}
+
+.vehicle-master-breadcrumbs span.active {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.vehicle-master-title {
+  font-size: 1.45rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: #0f172a;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.vehicle-master-subtitle {
+  color: #64748b;
+  font-size: 0.825rem;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* View Mode Switcher */
+.view-mode-toggle {
+  display: inline-flex;
+  align-items: center;
+  background-color: #f1f5f9;
+  padding: 3px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+}
+
+.view-mode-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 13px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.view-mode-btn:hover {
+  color: #0f172a;
+}
+
+.view-mode-btn.active {
+  background-color: #ffffff;
+  color: #2563eb;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* Action Buttons */
+.vehicle-action-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #ffffff;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+  padding: 7px 15px;
+  border-radius: 10px;
+  font-size: 0.83rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+.vehicle-action-btn-secondary:hover {
+  background-color: #f8fafc;
+  border-color: #94a3b8;
+  color: #0f172a;
+  transform: translateY(-1px);
+}
+
+.vehicle-action-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+  border: none;
+  padding: 7px 16px;
+  border-radius: 10px;
+  font-size: 0.83rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+.vehicle-action-btn-primary:hover {
+  background: linear-gradient(135deg, #1d4ed8, #1e40af);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
+}
+
+/* 2. Unified Filter Ribbon Container */
+.vehicle-filter-ribbon {
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 14px;
+  padding: 0.95rem 1.25rem;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.02), 0 3px 8px -2px rgba(15, 23, 42, 0.02);
+}
+
+.filter-grid-layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 2fr) repeat(4, minmax(135px, 1fr)) auto;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Modern Select Controls */
+.filter-select-modern {
+  width: 100%;
+  height: 38px;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0 10px;
+  font-size: 0.81rem;
+  color: #334155;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.18s ease;
+}
+
+.filter-select-modern:focus {
+  border-color: #2563eb;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* Modern Search Box */
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  height: 38px;
+  padding: 0 8px;
+  transition: all 0.18s ease;
+}
+
+.search-input-wrapper:focus-within {
+  background-color: #ffffff;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.search-scope-dropdown {
+  border: none;
+  background: transparent;
+  font-size: 0.77rem;
+  font-weight: 600;
+  color: #475569;
+  padding: 0 6px 0 2px;
+  cursor: pointer;
+  outline: none;
+  border-right: 1px solid #cbd5e1;
+  margin-right: 6px;
+  height: 22px;
+}
+
+.search-native-input {
+  border: none !important;
+  background: transparent !important;
+  outline: none !important;
+  font-size: 0.82rem;
+  color: #0f172a;
+  flex: 1;
+  min-width: 0;
+  padding: 0 4px;
+}
+
+.search-native-input::placeholder {
+  color: #94a3b8;
+}
+
+/* Keyboard hint tag */
+.search-kbd-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 5px;
+  padding: 2px 5px;
+  font-size: 0.68rem;
+  font-family: inherit;
+  color: #64748b;
+  font-weight: 600;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.search-clear-btn {
+  border: none;
+  background: transparent;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 2px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: color 0.15s ease;
+}
+
+.search-clear-btn:hover {
+  color: #0f172a;
+}
+
+/* Reset Filter Pill */
+.filter-reset-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 38px;
+  padding: 0 13px;
+  border-radius: 10px;
+  border: 1px solid #fee2e2;
+  background-color: #fff1f2;
+  color: #e11d48;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.18s ease;
+}
+
+.filter-reset-pill:hover {
+  background-color: #ffe4e6;
+  border-color: #fda4af;
+  color: #be123c;
+}
+
+
+
+/* Active Filter Removable Chips */
+.filter-active-chips-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  padding-top: 8px;
+  margin-top: 8px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.active-chips-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.filter-removable-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  color: #334155;
+  padding: 3px 9px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.filter-removable-chip button {
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  color: #94a3b8;
+  transition: color 0.15s ease;
+}
+
+.filter-removable-chip button:hover {
+  color: #ef4444;
+}
+
+/* Responsive Grid Breakdown */
+@media (max-width: 1200px) {
+  .filter-grid-layout {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .filter-grid-layout > div:first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 680px) {
+  .vehicle-master-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .filter-grid-layout {
+    grid-template-columns: 1fr;
+  }
+}

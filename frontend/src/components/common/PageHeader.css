@@ -1,0 +1,151 @@
+/* ==========================================================================
+   PageHeader - Universal Executive Design System Component
+   - Standardized across all dealership modules (Vehicles, Workshop, Sales,
+     Purchases, Inventory, Finance, Documents, CRM)
+   - Matches Vehicle Fleet master header aesthetic:
+     * Elevated white card (16px border-radius) with subtle border & soft shadow
+     * Polished breadcrumb chip navigation
+     * Bold deep slate typography with clear contextual subtitles
+     * Coordinated action button container
+   ========================================================================== */
+
+.page-master-header {
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 16px;
+  padding: 1.25rem 1.6rem;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04), 0 4px 12px -2px rgba(15, 23, 42, 0.02);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+  transition: all 0.2s ease;
+}
+
+.page-master-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.page-master-breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.77rem;
+  font-weight: 500;
+  color: #64748b;
+  margin-bottom: 2px;
+  flex-wrap: wrap;
+}
+
+.page-master-breadcrumbs a {
+  color: #64748b;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.page-master-breadcrumbs a:hover {
+  color: #2563eb;
+}
+
+.page-master-breadcrumbs .breadcrumb-sep {
+  color: #94a3b8;
+  font-size: 0.8rem;
+  user-select: none;
+}
+
+.page-master-breadcrumbs span.active {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.page-master-title {
+  font-size: 1.45rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: #0f172a;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.page-master-subtitle {
+  color: #64748b;
+  font-size: 0.825rem;
+  margin: 0;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.page-master-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+/* Primary Direct Action Button styling within Universal Header */
+.page-master-actions .btn-primary {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8) !important;
+  border: none !important;
+  color: #ffffff !important;
+  padding: 8px 18px !important;
+  border-radius: 10px !important;
+  font-size: 0.835rem !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  transition: all 0.18s ease !important;
+}
+
+.page-master-actions .btn-primary:hover {
+  background: linear-gradient(135deg, #1d4ed8, #1e40af) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35) !important;
+}
+
+.page-master-actions .btn-outline-secondary {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #334155 !important;
+  padding: 8px 16px !important;
+  border-radius: 10px !important;
+  font-size: 0.835rem !important;
+  font-weight: 600 !important;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  transition: all 0.18s ease !important;
+}
+
+.page-master-actions .btn-outline-secondary:hover {
+  background: #f8fafc !important;
+  border-color: #94a3b8 !important;
+  color: #0f172a !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 680px) {
+  .page-master-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.1rem 1.25rem;
+    gap: 1rem;
+  }
+
+  .page-master-actions {
+    width: 100%;
+  }
+
+  .page-master-actions > * {
+    flex: 1 1 auto;
+    justify-content: center;
+  }
+}

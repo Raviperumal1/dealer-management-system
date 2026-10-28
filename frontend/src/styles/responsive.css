@@ -1,0 +1,61 @@
+/* Responsive Utilities & Breakpoints */
+
+@media (max-width: 991.98px) {
+  .app-sidebar {
+    position: fixed;
+    left: -100%;
+    transition: left var(--transition-normal);
+    box-shadow: var(--shadow-xl);
+  }
+
+  .app-sidebar.mobile-open {
+    left: 0;
+  }
+
+  .app-content {
+    padding: 1.25rem 1rem;
+  }
+
+  .app-header {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .kpi-card {
+    padding: 1rem;
+  }
+
+  .kpi-value {
+    font-size: 1.3rem;
+  }
+
+  .app-card-header {
+    padding: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .app-card-body {
+    padding: 1rem;
+  }
+
+  .page-header-actions {
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 0.75rem;
+  }
+
+  .page-header-actions .btn {
+    flex: 1 1 auto;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

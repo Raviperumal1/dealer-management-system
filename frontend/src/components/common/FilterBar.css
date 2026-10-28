@@ -1,0 +1,138 @@
+/* ==========================================================================
+   FilterBar & SearchInput - Universal Executive Filter System
+   - Glassmorphism & clean rounded container (14px radius)
+   - Consistent control heights (38px)
+   - Harmonious borders, focus rings & pill reset buttons
+   ========================================================================== */
+
+.universal-filter-ribbon {
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 14px;
+  padding: 0.85rem 1.15rem;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.02), 0 3px 8px -2px rgba(15, 23, 42, 0.02);
+  margin-bottom: 1.25rem;
+  transition: all 0.2s ease;
+}
+
+.universal-filter-ribbon-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem;
+  justify-content: space-between;
+}
+
+.universal-filter-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem;
+  flex-grow: 1;
+}
+
+/* Universal styled dropdown selects in filter ribbon */
+.universal-filter-controls select.form-select,
+.universal-filter-controls select {
+  height: 38px;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0 10px;
+  font-size: 0.815rem;
+  color: #334155;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.18s ease;
+}
+
+.universal-filter-controls select.form-select:focus,
+.universal-filter-controls select:focus {
+  border-color: #2563eb;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* Universal Reset Filter Button */
+.universal-filter-reset-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 38px;
+  padding: 0 13px;
+  border-radius: 10px;
+  border: 1px solid #fee2e2;
+  background-color: #fff1f2;
+  color: #e11d48;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.18s ease;
+}
+
+.universal-filter-reset-btn:hover {
+  background-color: #ffe4e6;
+  border-color: #fda4af;
+  color: #be123c;
+}
+
+/* Modern Universal Search Box */
+.universal-search-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  height: 38px;
+  padding: 0 10px;
+  transition: all 0.18s ease;
+}
+
+.universal-search-wrapper:focus-within {
+  background-color: #ffffff;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.universal-search-icon {
+  color: #94a3b8;
+  flex-shrink: 0;
+  margin-right: 6px;
+}
+
+.universal-search-input {
+  border: none !important;
+  background: transparent !important;
+  outline: none !important;
+  font-size: 0.82rem;
+  color: #0f172a;
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+  box-shadow: none !important;
+}
+
+.universal-search-input::placeholder {
+  color: #94a3b8;
+}
+
+.universal-search-clear {
+  border: none;
+  background: transparent;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 2px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  margin-left: 4px;
+  transition: color 0.15s ease;
+}
+
+.universal-search-clear:hover {
+  color: #0f172a;
+}

@@ -1,0 +1,61 @@
+# ==============================================================================
+# BACKEND .gitignore - Spring Boot 3.4.2 / Java 21 / Maven
+# ==============================================================================
+
+# Compiled Binaries & Build Output
+target/
+bin/
+out/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# Local Environment Variables & Secrets
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.pem
+*.key
+*.p12
+*.jks
+
+# Runtime Uploads & Generated Documents
+uploads/
+storage/
+
+# Logging
+logs/
+*.log
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# Eclipse
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbattrs.xml
+/build/
+
+# Visual Studio Code
+.vscode/
+
+# OS Specific Junk
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
