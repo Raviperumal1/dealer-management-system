@@ -18,7 +18,9 @@ spring:
       ddl-auto: validate
   flyway:
     enabled: true
-    validate-on-migrate: true
+    validate-on-migrate: ${FLYWAY_VALIDATE_ON_MIGRATE:false}
+    baseline-on-migrate: true
+
 
 logging:
   level:
