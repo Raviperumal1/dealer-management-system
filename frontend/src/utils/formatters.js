@@ -60,19 +60,30 @@ export function formatFileSize(bytes) {
   return `${size.toFixed(1)} ${units[unitIndex]}`;
 }
 
-/**
- * Universally resolves vehicle photo & document URLs to correct proxy endpoints.
- */
 export function resolveImageUrl(url) {
   if (!url) return null;
   if (url.startsWith('http://') || url.startsWith('https://')) return url;
   if (url.startsWith('data:image')) return url;
-  if (url.startsWith('/api/v1.0/')) return url;
-  if (url.startsWith('/documents/')) return `/api/v1.0${url}`;
-  if (url.startsWith('documents/')) return `/api/v1.0/${url}`;
-  if (url.startsWith('/uploads/')) return `/api/v1.0${url}`;
-  if (url.startsWith('uploads/')) return `/api/v1.0/${url}`;
-  return `/api/v1.0/documents/${url}/download`;
+
+  // Use configured backend base URL (e.g. https://dealer-management-system-backend.onrender.com/api/v1.0)
+  const apiBase = (import.meta.env.VITE_API_BASE_URL || '/api/v1.0').replace(/\/+$/, '');
+
+  // If path already starts with /api/v1.0
+  if (url.startsWith('/api/v1.0/')) {
+    const subPath = url.substring('/api/v1.0'.length);
+    return `${apiBase}${subPath}`;
+  }
+
+  const cleanUrl = url.startsWith('/') ? url : `/${url}`;
+  if (cleanUrl.startsWith('/documents/')) {
+    return `${apiBase}${cleanUrl}/download`;
+  }
+  if (cleanUrl.startsWith('/uploads/')) {
+    return `${apiBase}${cleanUrl}`;
+  }
+
+  // Bare UUID or filename: resolve to documents download endpoint
+  return `${apiBase}/documents/${url}/download`;
 }
 
 /**
