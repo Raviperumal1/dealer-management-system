@@ -20,8 +20,6 @@ spring:
     enabled: true
     validate-on-migrate: ${FLYWAY_VALIDATE_ON_MIGRATE:false}
     baseline-on-migrate: true
-
-
 logging:
   level:
     root: WARN
