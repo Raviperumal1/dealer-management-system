@@ -75,14 +75,20 @@ export function resolveImageUrl(url) {
   }
 
   const cleanUrl = url.startsWith('/') ? url : `/${url}`;
+
+  // If URL is already in /documents/... format
   if (cleanUrl.startsWith('/documents/')) {
+    if (cleanUrl.endsWith('/download')) {
+      return `${apiBase}${cleanUrl}`;
+    }
     return `${apiBase}${cleanUrl}/download`;
   }
+
   if (cleanUrl.startsWith('/uploads/')) {
     return `${apiBase}${cleanUrl}`;
   }
 
-  // Bare UUID or filename: resolve to documents download endpoint
+  // Bare UUID or filename: resolve to /documents/{url}/download
   return `${apiBase}/documents/${url}/download`;
 }
 
