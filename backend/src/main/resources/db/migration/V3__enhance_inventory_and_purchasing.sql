@@ -3,36 +3,36 @@
 
 -- 1. Alter suppliers table with enterprise fields
 ALTER TABLE suppliers
-    ADD COLUMN IF NOT EXISTS supplier_code VARCHAR(50) UNIQUE AFTER id,
-    ADD COLUMN IF NOT EXISTS supplier_type VARCHAR(50) DEFAULT 'SPARE_PARTS' AFTER name,
-    ADD COLUMN IF NOT EXISTS alternate_contact VARCHAR(30) AFTER mobile,
-    ADD COLUMN IF NOT EXISTS pan_number VARCHAR(30) AFTER gst_number,
-    ADD COLUMN IF NOT EXISTS city VARCHAR(100) AFTER address,
-    ADD COLUMN IF NOT EXISTS state VARCHAR(100) AFTER city,
-    ADD COLUMN IF NOT EXISTS pincode VARCHAR(20) AFTER state,
-    ADD COLUMN IF NOT EXISTS bank_details TEXT AFTER pincode,
-    ADD COLUMN IF NOT EXISTS opening_outstanding_balance DECIMAL(14,2) DEFAULT 0.00 AFTER bank_details,
-    ADD COLUMN IF NOT EXISTS opening_advance_balance DECIMAL(14,2) DEFAULT 0.00 AFTER opening_outstanding_balance,
-    ADD COLUMN IF NOT EXISTS credit_enabled BOOLEAN DEFAULT TRUE AFTER opening_advance_balance,
-    ADD COLUMN IF NOT EXISTS credit_limit DECIMAL(14,2) DEFAULT 0.00 AFTER credit_enabled,
-    ADD COLUMN IF NOT EXISTS credit_period_days INT DEFAULT 30 AFTER credit_limit,
-    ADD COLUMN IF NOT EXISTS payment_terms VARCHAR(50) DEFAULT 'CREDIT' AFTER credit_period_days,
-    ADD COLUMN IF NOT EXISTS notes TEXT AFTER payment_terms;
+    ADD COLUMN supplier_code VARCHAR(50) UNIQUE AFTER id,
+    ADD COLUMN supplier_type VARCHAR(50) DEFAULT 'SPARE_PARTS' AFTER name,
+    ADD COLUMN alternate_contact VARCHAR(30) AFTER mobile,
+    ADD COLUMN pan_number VARCHAR(30) AFTER gst_number,
+    ADD COLUMN city VARCHAR(100) AFTER address,
+    ADD COLUMN state VARCHAR(100) AFTER city,
+    ADD COLUMN pincode VARCHAR(20) AFTER state,
+    ADD COLUMN bank_details TEXT AFTER pincode,
+    ADD COLUMN opening_outstanding_balance DECIMAL(14,2) DEFAULT 0.00 AFTER bank_details,
+    ADD COLUMN opening_advance_balance DECIMAL(14,2) DEFAULT 0.00 AFTER opening_outstanding_balance,
+    ADD COLUMN credit_enabled BOOLEAN DEFAULT TRUE AFTER opening_advance_balance,
+    ADD COLUMN credit_limit DECIMAL(14,2) DEFAULT 0.00 AFTER credit_enabled,
+    ADD COLUMN credit_period_days INT DEFAULT 30 AFTER credit_limit,
+    ADD COLUMN payment_terms VARCHAR(50) DEFAULT 'CREDIT' AFTER credit_period_days,
+    ADD COLUMN notes TEXT AFTER payment_terms;
 
 -- 2. Alter parts table with manufacturer, vehicle compatibility, and storage fields
 ALTER TABLE parts
-    ADD COLUMN IF NOT EXISTS manufacturer_brand VARCHAR(100) AFTER category,
-    ADD COLUMN IF NOT EXISTS part_number VARCHAR(100) AFTER manufacturer_brand,
-    ADD COLUMN IF NOT EXISTS compatible_vehicle_type VARCHAR(30) DEFAULT 'FOUR_WHEELER' AFTER part_number,
-    ADD COLUMN IF NOT EXISTS compatible_models VARCHAR(255) AFTER compatible_vehicle_type,
-    ADD COLUMN IF NOT EXISTS preferred_supplier_id BIGINT AFTER unit,
-    ADD COLUMN IF NOT EXISTS alternate_suppliers VARCHAR(255) AFTER preferred_supplier_id,
-    ADD COLUMN IF NOT EXISTS landed_cost DECIMAL(14,2) DEFAULT 0.00 AFTER purchase_price,
-    ADD COLUMN IF NOT EXISTS reserved_stock INT DEFAULT 0 AFTER current_stock,
-    ADD COLUMN IF NOT EXISTS reorder_level INT DEFAULT 5 AFTER reserved_stock,
-    ADD COLUMN IF NOT EXISTS storage_location VARCHAR(100) AFTER low_stock_threshold,
-    ADD COLUMN IF NOT EXISTS batch_or_serial_number VARCHAR(100) AFTER storage_location,
-    ADD COLUMN IF NOT EXISTS warranty_info VARCHAR(255) AFTER batch_or_serial_number;
+    ADD COLUMN manufacturer_brand VARCHAR(100) AFTER category,
+    ADD COLUMN part_number VARCHAR(100) AFTER manufacturer_brand,
+    ADD COLUMN compatible_vehicle_type VARCHAR(30) DEFAULT 'FOUR_WHEELER' AFTER part_number,
+    ADD COLUMN compatible_models VARCHAR(255) AFTER compatible_vehicle_type,
+    ADD COLUMN preferred_supplier_id BIGINT AFTER unit,
+    ADD COLUMN alternate_suppliers VARCHAR(255) AFTER preferred_supplier_id,
+    ADD COLUMN landed_cost DECIMAL(14,2) DEFAULT 0.00 AFTER purchase_price,
+    ADD COLUMN reserved_stock INT DEFAULT 0 AFTER current_stock,
+    ADD COLUMN reorder_level INT DEFAULT 5 AFTER reserved_stock,
+    ADD COLUMN storage_location VARCHAR(100) AFTER low_stock_threshold,
+    ADD COLUMN batch_or_serial_number VARCHAR(100) AFTER storage_location,
+    ADD COLUMN warranty_info VARCHAR(255) AFTER batch_or_serial_number;
 
 -- Add index and foreign key for parts preferred supplier
 ALTER TABLE parts
@@ -40,20 +40,20 @@ ALTER TABLE parts
 
 -- 3. Alter purchase_invoices table
 ALTER TABLE purchase_invoices
-    ADD COLUMN IF NOT EXISTS supplier_invoice_number VARCHAR(100) AFTER invoice_number,
-    ADD COLUMN IF NOT EXISTS purchase_date DATE AFTER invoice_date,
-    ADD COLUMN IF NOT EXISTS expected_delivery_date DATE AFTER purchase_date,
-    ADD COLUMN IF NOT EXISTS due_date DATE AFTER expected_delivery_date,
-    ADD COLUMN IF NOT EXISTS branch_warehouse VARCHAR(100) AFTER due_date,
-    ADD COLUMN IF NOT EXISTS vehicle_id BIGINT AFTER branch_warehouse,
-    ADD COLUMN IF NOT EXISTS job_card_id BIGINT AFTER vehicle_id,
-    ADD COLUMN IF NOT EXISTS subtotal_amount DECIMAL(14,2) DEFAULT 0.00 AFTER job_card_id,
-    ADD COLUMN IF NOT EXISTS discount_amount DECIMAL(14,2) DEFAULT 0.00 AFTER subtotal_amount,
-    ADD COLUMN IF NOT EXISTS freight_charge DECIMAL(14,2) DEFAULT 0.00 AFTER tax_amount,
-    ADD COLUMN IF NOT EXISTS other_charges DECIMAL(14,2) DEFAULT 0.00 AFTER freight_charge,
-    ADD COLUMN IF NOT EXISTS amount_paid DECIMAL(14,2) DEFAULT 0.00 AFTER total_amount,
-    ADD COLUMN IF NOT EXISTS amount_outstanding DECIMAL(14,2) DEFAULT 0.00 AFTER amount_paid,
-    ADD COLUMN IF NOT EXISTS created_by_user VARCHAR(100) AFTER posted_at;
+    ADD COLUMN supplier_invoice_number VARCHAR(100) AFTER invoice_number,
+    ADD COLUMN purchase_date DATE AFTER invoice_date,
+    ADD COLUMN expected_delivery_date DATE AFTER purchase_date,
+    ADD COLUMN due_date DATE AFTER expected_delivery_date,
+    ADD COLUMN branch_warehouse VARCHAR(100) AFTER due_date,
+    ADD COLUMN vehicle_id BIGINT AFTER branch_warehouse,
+    ADD COLUMN job_card_id BIGINT AFTER vehicle_id,
+    ADD COLUMN subtotal_amount DECIMAL(14,2) DEFAULT 0.00 AFTER job_card_id,
+    ADD COLUMN discount_amount DECIMAL(14,2) DEFAULT 0.00 AFTER subtotal_amount,
+    ADD COLUMN freight_charge DECIMAL(14,2) DEFAULT 0.00 AFTER tax_amount,
+    ADD COLUMN other_charges DECIMAL(14,2) DEFAULT 0.00 AFTER freight_charge,
+    ADD COLUMN amount_paid DECIMAL(14,2) DEFAULT 0.00 AFTER total_amount,
+    ADD COLUMN amount_outstanding DECIMAL(14,2) DEFAULT 0.00 AFTER amount_paid,
+    ADD COLUMN created_by_user VARCHAR(100) AFTER posted_at;
 
 ALTER TABLE purchase_invoices
     ADD CONSTRAINT fk_pi_vehicle FOREIGN KEY (vehicle_id) REFERENCES vehicles(id) ON DELETE SET NULL,
@@ -61,9 +61,9 @@ ALTER TABLE purchase_invoices
 
 -- 4. Alter purchase_invoice_items
 ALTER TABLE purchase_invoice_items
-    ADD COLUMN IF NOT EXISTS line_discount DECIMAL(14,2) DEFAULT 0.00 AFTER unit_price,
-    ADD COLUMN IF NOT EXISTS tax_amount DECIMAL(14,2) DEFAULT 0.00 AFTER tax_percentage,
-    ADD COLUMN IF NOT EXISTS landed_cost_allocation DECIMAL(14,2) DEFAULT 0.00 AFTER tax_amount;
+    ADD COLUMN line_discount DECIMAL(14,2) DEFAULT 0.00 AFTER unit_price,
+    ADD COLUMN tax_amount DECIMAL(14,2) DEFAULT 0.00 AFTER tax_percentage,
+    ADD COLUMN landed_cost_allocation DECIMAL(14,2) DEFAULT 0.00 AFTER tax_amount;
 
 -- 5. Create supplier_payments table
 CREATE TABLE IF NOT EXISTS supplier_payments (
