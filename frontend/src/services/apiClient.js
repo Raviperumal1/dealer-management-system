@@ -7,7 +7,7 @@ export const apiClient = axios.create({
   headers: {
     'Content-Type': 'application/json',
   },
-  timeout: 30000,
+  timeout: 90000, // 90 seconds to handle Render Free Tier cold starts
 });
 
 let isRefreshing = false;
